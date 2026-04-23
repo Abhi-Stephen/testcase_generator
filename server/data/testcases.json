@@ -1,0 +1,102 @@
+[
+  {
+    "id": "saved-101-login-success",
+    "title": "Valid login with correct credentials",
+    "description": "Verify that a user can log in successfully with valid credentials.",
+    "steps": [
+      "Open the login page.",
+      "Enter a valid username.",
+      "Enter a valid password.",
+      "Click the Sign In button."
+    ],
+    "expectedResult": "The user is authenticated and redirected to the dashboard.",
+    "priority": "High",
+    "type": "Positive",
+    "testData": {
+      "username": "valid.user@example.com",
+      "password": "Valid@1234"
+    },
+    "sourceRequirement": "User can log in with valid credentials",
+    "createdAt": "2026-04-10T00:00:00.000Z"
+  },
+  {
+    "id": "saved-102-login-invalid-password",
+    "title": "Invalid password should show an error",
+    "description": "Verify that an invalid password is rejected with a clear validation message.",
+    "steps": [
+      "Open the login page.",
+      "Enter a valid username.",
+      "Enter an invalid password.",
+      "Click the Sign In button."
+    ],
+    "expectedResult": "An error message is shown and the user remains on the login page.",
+    "priority": "High",
+    "type": "Negative",
+    "testData": {
+      "username": "valid.user@example.com",
+      "password": "WrongPass1"
+    },
+    "sourceRequirement": "User can log in with valid credentials",
+    "createdAt": "2026-04-10T00:00:00.000Z"
+  },
+  {
+    "id": "tc-1775839773859-fgv9zv",
+    "title": "Valid login with correct credentials",
+    "description": "Verify that a user can log in successfully for: User can log in with valid credentials",
+    "steps": [
+      "Open the login page.",
+      "Enter a valid username.",
+      "Enter a valid password.",
+      "Click the Sign In button."
+    ],
+    "expectedResult": "The user is authenticated and redirected to the dashboard.",
+    "priority": "High",
+    "type": "Positive",
+    "testData": {
+      "username": "valid.user@example.com",
+      "password": "Valid@1234"
+    },
+    "sourceRequirement": "",
+    "createdAt": "2026-04-10T16:54:40.881Z"
+  },
+  {
+    "id": "tc-1775839773859-93vioy",
+    "title": "Blank password validation",
+    "description": "Verify that the form blocks submission when the password is missing.",
+    "steps": [
+      "Open the login page.",
+      "Enter a valid username.",
+      "Leave the password field blank.",
+      "Click the Sign In button."
+    ],
+    "expectedResult": "The UI shows a required-field validation message for password.",
+    "priority": "Medium",
+    "type": "Validation",
+    "testData": {
+      "username": "valid.user@example.com",
+      "password": ""
+    },
+    "sourceRequirement": "",
+    "createdAt": "2026-04-10T16:54:40.881Z"
+  },
+  {
+    "id": "tc-1775839773859-0k4tmd",
+    "title": "Leading and trailing spaces are handled correctly",
+    "description": "Verify that extra spaces around credentials do not break the login flow.",
+    "steps": [
+      "Open the login page.",
+      "Enter a username with leading and trailing spaces.",
+      "Enter a password with a trailing space.",
+      "Click the Sign In button."
+    ],
+    "expectedResult": "The application trims supported inputs or shows a clear validation response.",
+    "priority": "Low",
+    "type": "Edge Case",
+    "testData": {
+      "username": "  valid.user@example.com  ",
+      "password": "Valid@1234 "
+    },
+    "sourceRequirement": "",
+    "createdAt": "2026-04-10T16:54:40.881Z"
+  }
+]

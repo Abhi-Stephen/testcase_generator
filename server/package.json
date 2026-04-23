@@ -1,0 +1,16 @@
+{
+  "name": "test-case-generator-server",
+  "version": "1.0.0",
+  "description": "Phase 1 backend for AI-powered test case generator",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "openai": "^4.104.0",
+    "pg": "^8.13.0"
+  }
+}
