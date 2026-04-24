@@ -1,3 +1,5 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
 async function handleResponse(response) {
   const data = await response.json();
 
@@ -9,7 +11,7 @@ async function handleResponse(response) {
 }
 
 export async function generateTestCases(requirement) {
-  const response = await fetch('/api/generate-testcases', {
+  const response = await fetch(`${API_BASE_URL}/api/generate-testcases`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -21,12 +23,12 @@ export async function generateTestCases(requirement) {
 }
 
 export async function getSavedTestCases() {
-  const response = await fetch('/api/testcases');
+  const response = await fetch(`${API_BASE_URL}/api/testcases`);
   return handleResponse(response);
 }
 
 export async function saveTestCases(testCases) {
-  const response = await fetch('/api/testcases', {
+  const response = await fetch(`${API_BASE_URL}/api/testcases`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -38,7 +40,7 @@ export async function saveTestCases(testCases) {
 }
 
 export async function deleteTestCase(testCaseId) {
-  const response = await fetch(`/api/testcases/${testCaseId}`, {
+  const response = await fetch(`${API_BASE_URL}/api/testcases/${testCaseId}`, {
     method: 'DELETE'
   });
 
@@ -46,6 +48,6 @@ export async function deleteTestCase(testCaseId) {
 }
 
 export async function getSystemStatus() {
-  const response = await fetch('/api/system-status');
+  const response = await fetch(`${API_BASE_URL}/api/system-status`);
   return handleResponse(response);
 }
